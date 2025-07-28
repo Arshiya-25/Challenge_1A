@@ -1,4 +1,4 @@
-# Docrobat: Human-Like PDF Structure Understanding  
+# Docrobat: Intelligent Parsing of Document Hierarchies
 **Challenge 1a – Adobe India Hackathon 2025**
 
 **Docrobat** is our cutting-edge solution to Challenge 1a of the Adobe India Hackathon 2025—a sophisticated PDF processing system that revolutionizes how machines comprehend document structure. 
@@ -109,4 +109,4 @@ Docrobat demonstrates that **true document comprehension doesn't require brute-f
 ---
 
 Made by Team InnovateHers | Adobe India Hackathon 2025
-
+Anushka Nandwani, Arshiya Singh, Anjana Rao -- Indira Gandhi Delhi Technical University for Women
