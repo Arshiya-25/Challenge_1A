@@ -1,7 +1,7 @@
 # Docrobat: Human-Like PDF Structure Understanding  
 **Challenge 1a – Adobe India Hackathon 2025**
 
-Docrobat is our cutting-edge solution to Challenge 1a of the Adobe India Hackathon 2025—a sophisticated PDF processing system that revolutionizes how machines comprehend document structure. 
+**Docrobat** is our cutting-edge solution to Challenge 1a of the Adobe India Hackathon 2025—a sophisticated PDF processing system that revolutionizes how machines comprehend document structure. 
 
 Unlike traditional approaches that rely on simplistic font-size heuristics, DotStruct uses **multi-dimensional intelligence** to extract structured hierarchies—titles, headings (H1–H3), and layout cues—with exceptional accuracy and zero reliance on machine learning.
 
@@ -93,7 +93,7 @@ docker run --rm \
 
 
 
-## Philosophy
+## Behind the Intelligence
 
 Docrobat demonstrates that **true document comprehension doesn't require brute-force AI**. Instead, we emulate how humans read—visually, contextually, and intuitively.
 
