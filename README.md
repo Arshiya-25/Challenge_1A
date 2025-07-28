@@ -17,7 +17,7 @@ Unlike traditional approaches that rely on simplistic font-size heuristics, DotS
 
 
 
-## 🐳 Build & Run with Docker
+## Build & Run with Docker
 
 ```bash
 # Build
