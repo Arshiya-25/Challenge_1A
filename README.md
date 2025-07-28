@@ -1,30 +1,112 @@
-# Semantic Document Explorer - PDF Heading Extractor
+# Docrobat: Human-Like PDF Structure Understanding  
+**Challenge 1a – Adobe India Hackathon 2025**
 
-## Overview
-This application extracts structured outlines from PDF documents, identifying titles and hierarchical headings (H1, H2, H3) with their page numbers.
+Docrobat is our cutting-edge solution to Challenge 1a of the Adobe India Hackathon 2025—a sophisticated PDF processing system that revolutionizes how machines comprehend document structure. 
 
-## Approach
-- **Font Size Analysis**: Primary method for identifying heading levels
-- **Text Pattern Recognition**: Detects common heading patterns (numbered sections, chapters, etc.)
-- **Formatting Cues**: Uses bold text and other formatting indicators
-- **Hierarchical Classification**: Automatically assigns H1, H2, H3 levels based on font size tiers
-- **Multilingual Support**: Works with various character encodings including Japanese
+Unlike traditional approaches that rely on simplistic font-size heuristics, DotStruct uses **multi-dimensional intelligence** to extract structured hierarchies—titles, headings (H1–H3), and layout cues—with exceptional accuracy and zero reliance on machine learning.
 
-## Libraries Used
-- **PyMuPDF (fitz)**: PDF processing and text extraction with formatting information
-- **Python Standard Library**: JSON handling, regex, pathlib, logging
 
-## Features
-- Processes PDFs up to 50 pages
-- Extracts title and hierarchical headings
-- Outputs structured JSON format
-- Handles multilingual content
-- Optimized for performance (< 10 seconds for 50-page PDF)
-- No internet connectivity required
-- Lightweight model size (< 200MB)
 
-## Build and Run
+## Core Technologies
 
-### Building the Docker Image
+- **PyMuPDF (1.23.24)** – Advanced PDF parsing with fine-grained font metadata
+- **NumPy** – Spatial positioning and geometric computations
+- **Multi-Dimensional Intelligence** – Font analysis, spatial psychology, heuristic logic, and scoring
+- **Zero ML Dependencies** – Sophisticated rule-based system (<200MB footprint)
+- **Docker** – Containerized, fully offline processing
+
+
+
+## 🐳 Build & Run with Docker
+
 ```bash
-docker build --platform linux/amd64 -t pdf-heading-extractor:latest .
+# Build
+docker build --platform linux/amd64 -t dotstruct.extractor .
+
+# Run
+docker run --rm \
+  -v $(pwd)/input:/app/input:ro \
+  -v $(pwd)/output/dotstruct:/app/output \
+  --network none dotstruct.extractor
+````
+
+
+
+## Standout Features
+
+### Multi-Dimensional Intelligence
+
+Goes beyond font size with:
+
+* **Visual Forensics** – Layout, font weight, and styles
+* **Content Psychology** – Alignment, capitalization, punctuation patterns
+* **Probabilistic Scoring** – Local comparisons for heading hierarchy
+
+### Zero-Model Design
+
+* Ultra-fast execution – no model loading or inference lag
+* Fully explainable, rule-based logic
+* Offline-compatible and resource-light
+* Easy to maintain – no retraining or fine-tuning
+
+### Multilingual-Ready Foundation
+
+* Supports Unicode & multi-script documents
+* Language-agnostic structural analysis
+* Modular design for future localization
+
+
+
+## Project Structure
+
+```text
+Docrobat/
+├── sample_dataset/
+│   ├── pdfs/            # Input PDFs
+│   ├── outputs/         # JSON outputs
+│   └── schema/          # Output schema (for validation)
+├── process_pdfs.py      # Core PDF-to-structure logic
+├── Dockerfile           # Container build configuration
+├── requirements.txt     # Dependencies
+└── README.md
+```
+
+## Testing Guide
+
+### Run Test with Sample Data
+
+```bash
+docker build --platform linux/amd64 -t dotstruct.extractor .
+
+docker run --rm \
+  -v $(pwd)/sample_dataset/pdfs:/app/input:ro \
+  -v $(pwd)/sample_dataset/outputs:/app/output \
+  --network none dotstruct.extractor
+```
+
+### Pass Criteria
+
+* All PDFs in `/input` produce valid JSONs in `/output`
+* Matches schema: `/sample_dataset/schema/output_schema.json`
+* Executes in **<10s for a 50-page PDF (on typical dev hardware)**
+* Runs offline with memory footprint <200MB
+
+
+
+## Philosophy
+
+Docrobat demonstrates that **true document comprehension doesn't require brute-force AI**. Instead, we emulate how humans read—visually, contextually, and intuitively.
+
+> *“This isn't just document processing; it's document understanding.”*
+
+
+## Future-Ready
+
+* Multilingual support (tested with English, Hindi script)
+* Modular scoring rules for easy tuning
+* Potential to integrate optional ML boost in future versions
+
+---
+
+Made by Team InnovateHers | Adobe India Hackathon 2025
+
